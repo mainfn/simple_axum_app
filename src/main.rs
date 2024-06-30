@@ -13,5 +13,5 @@ async fn main() {
 }
 
 async fn handle() -> Html<&'static str> {
-    Html("<h1>Hello World</h1>")
+    Html("<h1>Hello Worldv2</h1>")
 }
