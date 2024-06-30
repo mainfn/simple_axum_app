@@ -11,11 +11,9 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-
-   build:
+  build:
 
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v4
 
@@ -34,9 +32,16 @@ jobs:
       run: echo simple step1
     - name: Build
       run: cargo build --verbose
-    - name: simple step with multi line
-      run: |
-        echo simple step2
-        echo with multi line
-    - name: Run tests
-      run: cargo test --verbose
+
+
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v4
+      - name: simple step with multi line
+        run: |
+          echo simple step2
+          echo with multi line
+      - name: Run tests
+        run: cargo test --verbose
