@@ -16,8 +16,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: simple step1
+      run: echo simple step1
     - uses: actions/checkout@v4
     - name: Build
       run: cargo build --verbose
+    - name: simple step with multi line
+      run: |
+        echo simple step2
+        echo with multi line
     - name: Run tests
       run: cargo test --verbose
