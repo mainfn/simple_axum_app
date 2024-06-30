@@ -29,7 +29,9 @@ jobs:
         key: ${{ runner.os }}-cargo-${{ hashFiles('**.Cargo.lock') }}
 
     - name: simple step1
-      run: echo simple step1
+      run: |
+        echo runner.os=  ${{ runner.os }}
+        echo hash= ${{ hashFiles('**.Cargo.lock') }}
     - name: Build
       run: cargo build --verbose
 
