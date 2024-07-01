@@ -25,7 +25,7 @@ jobs:
     #     ( echo "${{ vars.FILE_TO_CHECK }} file should be added to ${{ github.repository }} !" && exit 1 )    
     # - run: echo "INFO_LEVEL=$INFO_LEVEL"
   do_something:
-    environment: dev
+    environment: prod
     defaults:
       run:
         shell: bash
