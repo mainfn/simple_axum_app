@@ -34,6 +34,7 @@ jobs:
     steps:
       - run: echo "runner os= $RUNNER_OS"
       - run: echo "runner os= ${{ runner.os }}"
+      - run: echo "ENV SOME=$SOME"
       - run: echo "ENV SOME=${{ vars.SOME }}"
 
   build:
