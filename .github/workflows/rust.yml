@@ -22,7 +22,8 @@ jobs:
     - uses: actions/checkout@v3
     - run: |
         [[ -f ${{ vars.FILE_TO_CHECK }} ]] &&
-        ( echo "${{ vars.FILE_TO_CHECK }} file should be added to ${{ github.repository }} !" && exit 1 )    - run: echo "INFO_LEVEL=$INFO_LEVEL"
+        ( echo "${{ vars.FILE_TO_CHECK }} file should be added to ${{ github.repository }} !" && exit 1 )    
+    - run: echo "INFO_LEVEL=$INFO_LEVEL"
   do_something:
     defaults:
       run:
