@@ -11,8 +11,9 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-
+  
   verify:
+    environment: dev
     env:
       INFO_LEVEL: ${{ vars.INFO_LEVEL }}
     name: ${{ vars.JOB_NAME }}
