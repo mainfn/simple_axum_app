@@ -11,8 +11,16 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  file-tree:
-    runs-on: self-hosted
+  do_something:
+    defaults:
+      run:
+        shell: bash
+        working-directory: some
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "runner os= $RUNNER_OS"
+      - run: echo "runner os= ${{ runner.os }}"
+
   build:
 
     runs-on: ubuntu-latest
