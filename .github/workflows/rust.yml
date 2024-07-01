@@ -13,7 +13,6 @@ env:
 jobs:
   
   verify:
-    environment: dev
     env:
       INFO_LEVEL: ${{ vars.INFO_LEVEL }}
     name: ${{ vars.JOB_NAME }}
@@ -26,6 +25,7 @@ jobs:
     #     ( echo "${{ vars.FILE_TO_CHECK }} file should be added to ${{ github.repository }} !" && exit 1 )    
     # - run: echo "INFO_LEVEL=$INFO_LEVEL"
   do_something:
+    environment: dev
     defaults:
       run:
         shell: bash
@@ -35,6 +35,8 @@ jobs:
       - run: echo "runner os= $RUNNER_OS"
       - run: echo "runner os= ${{ runner.os }}"
       - run: echo "ENV SOME=$SOME"
+      - run: echo "GITHUB ENV=$GITHUB_ENV"
+      - run: echo "GITHUB ACTION=$GITHUB_ACTION"
       - run: echo "ENV SOME=${{ vars.SOME }}"
 
   build:
