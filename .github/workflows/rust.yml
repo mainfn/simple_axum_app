@@ -11,6 +11,8 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
+  file-tree:
+    runs-on: self-hosted
   build:
 
     runs-on: ubuntu-latest
