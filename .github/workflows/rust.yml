@@ -15,7 +15,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: some
+        # working-directory: some
     runs-on: ubuntu-latest
     steps:
       - run: echo "runner os= $RUNNER_OS"
